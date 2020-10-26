@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: a431e1e41110722419aa3ef1451033bd, type: 2}
 --- !u!1 &159229623
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,7 +140,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &159229624
 Transform:
@@ -235,7 +235,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &276393871
 Transform:
@@ -615,10 +615,11 @@ GameObject:
   - component: {fileID: 924671942}
   - component: {fileID: 924671945}
   - component: {fileID: 924671944}
-  - component: {fileID: 924671943}
   - component: {fileID: 924671946}
   - component: {fileID: 924671947}
-  m_Layer: 0
+  - component: {fileID: 924671948}
+  - component: {fileID: 924671943}
+  m_Layer: 9
   m_Name: Opponent
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -715,6 +716,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  agent: {fileID: 924671948}
+  player: {fileID: 1390391431}
 --- !u!54 &924671947
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -728,9 +731,31 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!195 &924671948
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924671941}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 2
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &1108917691
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,7 +868,7 @@ GameObject:
   - component: {fileID: 1205051861}
   m_Layer: 0
   m_Name: Graphics
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1050,9 +1075,10 @@ GameObject:
   - component: {fileID: 1390391432}
   - component: {fileID: 1390391433}
   - component: {fileID: 1390391434}
+  - component: {fileID: 1390391435}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1099,7 +1125,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &1390391433
@@ -1117,6 +1143,9 @@ MonoBehaviour:
   maxHealth: 100
   currHealth: 100
   health: {fileID: 614276706}
+  enemy:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!114 &1390391434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1134,6 +1163,20 @@ MonoBehaviour:
   canBeTrapped:
     serializedVersion: 2
     m_Bits: 256
+--- !u!136 &1390391435
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390391429}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1415693666
 GameObject:
   m_ObjectHideFlags: 0
@@ -1161,7 +1204,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1415693666}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.69, z: 0.066}
+  m_LocalPosition: {x: 0, y: 0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 516543008}

@@ -62,8 +62,8 @@
     <Compile Include="Assets\Scripts\CameraLook.cs" />
     <Compile Include="Assets\testing\activator.cs" />
     <Compile Include="Assets\Scripts\Health.cs" />
-    <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\TrapPlacer.cs" />
+    <Compile Include="Assets\Scripts\Enemy.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
